@@ -86,13 +86,11 @@ func Start() error {
 	}
 	defer logFile.Close()
 
-	// Start daemon process
+	// Start daemon process with platform-specific attributes
 	cmd := exec.Command(exePath, "daemon")
 	cmd.Stdout = logFile
 	cmd.Stderr = logFile
-	cmd.SysProcAttr = &syscall.SysProcAttr{
-		Setpgid: true, // Detach from parent process group
-	}
+	setProcAttributes(cmd)
 
 	if err := cmd.Start(); err != nil {
 		return fmt.Errorf("failed to start daemon: %w", err)
