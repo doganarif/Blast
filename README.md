@@ -20,11 +20,20 @@ sudo blast start 3000 myapp
 
 ## Installation
 
+### Homebrew (macOS/Linux)
+
+```bash
+brew tap doganarif/blast
+brew install blast
+```
+
+### Go Install
+
 ```bash
 go install github.com/doganarif/blast/cmd/blast@latest
 ```
 
-Or build from source:
+### Build from Source
 
 ```bash
 git clone https://github.com/doganarif/blast.git

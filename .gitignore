@@ -9,6 +9,9 @@ blast
 *.test
 *.out
 
+# GoReleaser
+dist/
+
 # IDE
 .idea/
 .vscode/
